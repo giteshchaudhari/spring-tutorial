@@ -13,5 +13,10 @@ public class Main {
         //Retrieve prototype bean from application context thrice
         RecommenderImplementation cf1 = appContext.getBean(RecommenderImplementation.class);
         System.out.println(cf1);
+        Movie mv1 = appContext.getBean(Movie.class);
+        System.out.println(mv1);
+        Movie mv2 = appContext.getBean(Movie.class);
+        System.out.println(mv2);
+
     }
 }

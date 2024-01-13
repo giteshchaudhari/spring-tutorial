@@ -1,5 +1,6 @@
 package io.datajek.spring.basics.lesson11;
 
+import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,12 @@ public class ContentBasedFilter implements Filter {
     private void postConstruct() {
         //load movies into cache
         logger.info("In ContentBasedFilter postConstruct method");
+    }
+
+    @PreDestroy
+    private void preDestroy() {
+        //clean up resources
+        logger.info("In ContentBasedFilter preDestroy method");
     }
 
     public String[] getRecommendations(String movie) {

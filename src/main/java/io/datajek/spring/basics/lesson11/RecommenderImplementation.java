@@ -1,6 +1,7 @@
 package io.datajek.spring.basics.lesson11;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class RecommenderImplementation {
     @PostConstruct
     public void postConstruct() {
         logger.info("In RecommenderImplementation postConstruct method..");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("In RecommenderImplementation preDestroy method..");
     }
 
     public String [] recommendMovies (String movie) {
