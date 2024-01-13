@@ -1,0 +1,28 @@
+package io.datajek.spring.basics.lesson3;
+
+import io.datajek.spring.basics.lesson2.Filter;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Component
+public class RecommenderImplementation {
+
+    //use filter interface to select filter
+    @Autowired
+    private Filter filter;
+
+    public RecommenderImplementation(Filter filter) {
+        super();
+        this.filter = filter;
+    }
+
+    public String [] recommendMovies (String movie) {
+
+        //print the name of interface implementation being used
+        System.out.println("Name of the filter in use: " + filter + "\n");
+
+        String[] results = filter.getRecommendations("Finding Dory");
+
+        return results;
+    }
+}
