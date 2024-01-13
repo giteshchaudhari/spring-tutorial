@@ -1,0 +1,27 @@
+package io.datajek.spring.basics.lesson16;
+
+import io.datajek.spring.basics.lesson16.Filter;
+import io.datajek.spring.basics.lesson16.Movie;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ContentBasedFilter implements Filter {
+
+    @Autowired
+    private Movie movie;
+
+    public ContentBasedFilter() {
+        super();
+    }
+
+    //getRecommendations takes a movie as input and returns a list of similar movies
+    public String[] getRecommendations(String movie) {
+
+        //calculate similarity between movies
+
+        //return movie recommendations
+        return new String[] {"Happy Feet", "Ice Age", "Shark Tale"};
+    }
+
+}
